@@ -1,6 +1,35 @@
 .hide {
   display: none;
 }
+.voltar {
+  display: block;
+}
+.jogos {
+  width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.jogos .jogo {
+  outline: solid 1px green;
+  margin-bottom: 20px;
+  float: left;
+  margin-right: 20px;
+}
+.jogos .jogo .de,
+.jogos .jogo .para,
+.jogos .jogo .seta {
+  height: 150px;
+  text-decoration: none;
+  display: block;
+  float: left;
+}
+.jogos .jogo .de,
+.jogos .jogo .para {
+  width: 120px;
+}
+.jogos .jogo .seta {
+  width: 60px;
+}
 .letras .letra {
   width: 150px;
   height: 150px;

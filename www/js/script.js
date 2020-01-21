@@ -73,17 +73,35 @@ Script = {
 
         $(".btn-forma").click(function(){
             $(".letra span").css('font-family', 'arial');
+            Script.falando('Oi vó Rosangela, aqui é o Miguel, eu te amo, amo o coração dela, quero brincar com ela, brincar de piscina');
         });
 
         $(".btn-randomize").click(function(){
             Script.randomize();
-            Script.falando('a');
+            Script.falando('misturando tudo');
         });
     },
 
     falando: function(letra){
+        var voices = window.speechSynthesis.getVoices();
         var msg = new SpeechSynthesisUtterance(letra);
         msg.lang = "pt-BR";
+        // msg.voice = voices[9];
+        // msg.voiceURI = "native";
+        // msg.volume = 1;
+        // msg.rate = 1;
+        // msg.pitch = 1.1;
         window.speechSynthesis.speak(msg);
+
+        var utterThis = new SpeechSynthesisUtterance(letra);
+        // var selectedOption = synth.getVoices();
+        for(i = 0; i < voices.length ; i++) {
+            // if(voices[i].name === selectedOption) {
+                console.info("-->" + voices[i]);
+                utterThis.voice = voices[i];
+                utterThis.lang = 'pt-BR';
+                // window.speechSynthesis.speak(utterThis);
+            // }
+        }
     }
 }
