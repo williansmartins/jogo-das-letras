@@ -49,7 +49,10 @@ Script = {
 
     apresentarImagem: function(){
 		$(".letra").click(function(){
+            var texto = $(this).find("span").html();
             $(this).find("span").toggle();
+            Script.falando(texto)
+
             var imagem = $(this).find("img");
             $(imagem).toggle();
         });
@@ -74,6 +77,13 @@ Script = {
 
         $(".btn-randomize").click(function(){
             Script.randomize();
+            Script.falando('a');
         });
+    },
+
+    falando: function(letra){
+        var msg = new SpeechSynthesisUtterance(letra);
+        msg.lang = "pt-BR";
+        window.speechSynthesis.speak(msg);
     }
 }

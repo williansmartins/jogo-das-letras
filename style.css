@@ -8,6 +8,7 @@
   outline: solid 1px black;
   margin: 10px;
   cursor: pointer;
+  overflow: hidden;
 }
 .letras .letra span {
   display: block;
