@@ -1,6 +1,10 @@
+body .fogos .fechar {
+  color: white;
+  position: relative;
+  z-index: 1;
+}
 body .wrapper {
   width: 850px;
-  outline: solid;
   margin: 0 auto;
 }
 body .wrapper .hide {

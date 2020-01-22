@@ -4,12 +4,23 @@ $(document).ready(function(){
     // Script.cursiva();
     // Script.randomize();
     Script.clicks();
-    $('.wrapper').fireworks({ sound: true, opacity: 0.9, width: '100%', height: '100%' });
+    // Script.aplicarFogos();
+    $('.fechar').hide();
 });
 
 
 
 Script = {
+    
+    aplicarFogos: function(){
+        $('.fogos').fireworks({ sound: true, opacity: 0.9, width: '100%', height: '100%' });
+        $('.fechar').show();
+
+        $('.fechar').click(function(){
+            $('#fireworksField').remove();
+            $('.fechar').hide();
+        });
+    },
 
     shuffleAds: function(arr){
         for(var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
