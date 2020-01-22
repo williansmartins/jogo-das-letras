@@ -4,7 +4,9 @@ $(document).ready(function(){
     // Script.cursiva();
     // Script.randomize();
     Script.clicks();
+    $('.wrapper').fireworks({ sound: true, opacity: 0.9, width: '100%', height: '100%' });
 });
+
 
 
 Script = {
