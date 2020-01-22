@@ -1,6 +1,6 @@
-$(document).ready(function(){
+$(document).ready(function () {
     //Script.colorir();
-    Script.apresentarImagem();
+    Script.apresentarImagens();
     // Script.cursiva();
     // Script.randomize();
     Script.clicks();
@@ -8,26 +8,160 @@ $(document).ready(function(){
     $('.fechar').hide();
 });
 
+var letrasJson = {
+    "itens": [
+        {
+            "letra": "a",
+            "imagem": "abelha",
+            "imagemUrl": "abelha.jpeg"
+        },
+        {
+            "letra": "b",
+            "imagem": "bola",
+            "imagemUrl": "bola.jpeg"
+        },
+        {
+            "letra": "c",
+            "imagem": "cachorro",
+            "imagemUrl": "cachorro.jpeg"
+        },
+        {
+            "letra": "d",
+            "imagem": "dado",
+            "imagemUrl": "dado.jpeg"
+        },
+        {
+            "letra": "e",
+            "imagem": "elefante",
+            "imagemUrl": "elefante.jpeg"
+        },
+        {
+            "letra": "f",
+            "imagem": "faca",
+            "imagemUrl": "faca.jpeg"
+        },
+        {
+            "letra": "g",
+            "imagem": "gato",
+            "imagemUrl": "gato.jpeg"
+        },
+        {
+            "letra": "h",
+            "imagem": "helicóptero",
+            "imagemUrl": "helicóptero.jpeg"
+        },
+        {
+            "letra": "i",
+            "imagem": "indio",
+            "imagemUrl": "indio.jpeg"
+        },
+        {
+            "letra": "j",
+            "imagem": "jacaré",
+            "imagemUrl": "jacaré.jpeg"
+        },
+        {
+            "letra": "k",
+            "imagem": "kiwi",
+            "imagemUrl": "kiwi.jpeg"
+        },
+        {
+            "letra": "l",
+            "imagem": "laranja",
+            "imagemUrl": "laranja.jpeg"
+        },
+        {
+            "letra": "m",
+            "imagem": "maçã",
+            "imagemUrl": "maçã.jpeg"
+        },
+        {
+            "letra": "n",
+            "imagem": "navio",
+            "imagemUrl": "navio.jpeg"
+        },
+        {
+            "letra": "o",
+            "imagem": "ovo",
+            "imagemUrl": "ovo.jpeg"
+        },
+        {
+            "letra": "p",
+            "imagem": "pato",
+            "imagemUrl": "pato.jpeg"
+        },
+        {
+            "letra": "q",
+            "imagem": "queijo",
+            "imagemUrl": "queijo.jpeg"
+        },
+        {
+            "letra": "r",
+            "imagem": "rato",
+            "imagemUrl": "rato.jpeg"
+        },
+        {
+            "letra": "s",
+            "imagem": "sapo",
+            "imagemUrl": "sapo.jpeg"
+        },
+        {
+            "letra": "t",
+            "imagem": "tigre",
+            "imagemUrl": "tigre.jpeg"
+        },
+        {
+            "letra": "u",
+            "imagem": "uva",
+            "imagemUrl": "uva.jpeg"
+        },
+        {
+            "letra": "v",
+            "imagem": "violão",
+            "imagemUrl": "violão.jpeg"
+        },
+        {
+            "letra": "w",
+            "imagem": "willians",
+            "imagemUrl": "willians.jpeg"
+        },
+        {
+            "letra": "x",
+            "imagem": "xadrez",
+            "imagemUrl": "xadrez.jpeg"
+        },
+        {
+            "letra": "y",
+            "imagem": "yasmin",
+            "imagemUrl": "yasmin.jpeg"
+        },
+        {
+            "letra": "z",
+            "imagem": "zebra",
+            "imagemUrl": "zebra.jpeg"
+        }
+    ]
+};
 
 
 Script = {
-    
-    aplicarFogos: function(){
+
+    aplicarFogos: function () {
         $('.fogos').fireworks({ sound: true, opacity: 0.9, width: '100%', height: '100%' });
         $('.fechar').show();
 
-        $('.fechar').click(function(){
+        $('.fechar').click(function () {
             $('#fireworksField').remove();
             $('.fechar').hide();
         });
     },
 
-    shuffleAds: function(arr){
-        for(var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
+    shuffleAds: function (arr) {
+        for (var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
         return arr;
     },
 
-    randomize: function(){
+    randomize: function () {
         // var alfabeto = Script.random('a', 'z');
         // alfabeto.forEach(element => {
         //     console.info("-->" + element);
@@ -35,35 +169,47 @@ Script = {
 
         var letras = $(".letra");
         Script.shuffleAds(letras);
-        
+
         // $(".letras").empty();
-        
-        $(".letra").each(function(chave, valor){
+
+        $(".letra").each(function (chave, valor) {
             console.info("-->" + chave);
             console.info("-->" + valor);
             // $(".letras").append(valor);
             $(valor).remove();
         });
-        
+
         $(".letras").append(letras);
-        Script.apresentarImagem();
+        Script.apresentarImagens();
     },
 
-    random: function(c1, c2) {
+    random: function (c1, c2) {
         a = 'abcdefghijklmnopqrstuvwxyz'.split('');
-        return (a.slice(a.indexOf(c1), a.indexOf(c2) + 1)); 
+        return (a.slice(a.indexOf(c1), a.indexOf(c2) + 1));
     },
 
-	colorir: function(){
-		$(".letra").click(function(){
+    colorir: function () {
+        $(".letra").click(function () {
             $(this).toggleClass('selecionada');
         });
     },
 
-    apresentarImagem: function(){
-		$(".letra").click(function(){
-            var texto = $(this).find("span").html();
-            $(this).find("span").toggle();
+    apresentarImagens: function () {
+
+        for (letra in letrasJson.itens) {
+            var letra = letrasJson.itens[letra];
+
+            $(".letras").append(`<div class='letra'>
+                <span class='caractere'>`+ letra.letra + `</span>
+                <a href="#" class='som'>.</a>
+                <a href="#" class='imagem'>..</a>
+                <img src='img/`+ letra.imagemUrl + `' alt="` + letra.imagem + `">
+            </div>`);
+        };
+
+        $(".letra").click(function () {
+            var texto = $(this).find("img").attr('alt');
+            $(this).find("span.caractere").toggle();
             Script.falando(texto)
 
             var imagem = $(this).find("img");
@@ -71,31 +217,38 @@ Script = {
         });
     },
 
-    clicks: function(){
-        $(".btn-cursiva").click(function(){
+    clicks: function () {
+        $(".btn-cursiva").click(function () {
             $(".letra span").css('font-family', 'cursive');
         });
 
-        $(".btn-maiuscula").click(function(){
+        $(".btn-maiuscula").click(function () {
             $(".letra span").css('text-transform', 'uppercase');
         });
 
-        $(".btn-minuscula").click(function(){
+        $(".btn-minuscula").click(function () {
             $(".letra span").css('text-transform', 'lowercase');
         });
 
-        $(".btn-forma").click(function(){
+        $(".btn-forma").click(function () {
             $(".letra span").css('font-family', 'arial');
-            Script.falando('Oi vó Rosangela, aqui é o Miguel, eu te amo, amo o coração dela, quero brincar com ela, brincar de piscina');
         });
 
-        $(".btn-randomize").click(function(){
+        $(".btn-randomize").click(function () {
             Script.randomize();
             Script.falando('misturando tudo');
         });
+
+        $(".btn-rosangela").click(function () {
+            Script.falando('Oi vó Rosangela, aqui é o Miguel, eu te amo, amo o coração dela, quero brincar com ela, brincar de piscina');
+        });
+
+        $(".btn-nayara").click(function () {
+            Script.falando('mamae nayara, eu te amo muito, eu quero que você brinque muito comigo, eu te amo infinito.');
+        });
     },
 
-    falando: function(letra){
+    falando: function (letra) {
         var voices = window.speechSynthesis.getVoices();
         var msg = new SpeechSynthesisUtterance(letra);
         msg.lang = "pt-BR";
@@ -108,12 +261,12 @@ Script = {
 
         var utterThis = new SpeechSynthesisUtterance(letra);
         // var selectedOption = synth.getVoices();
-        for(i = 0; i < voices.length ; i++) {
+        for (i = 0; i < voices.length; i++) {
             // if(voices[i].name === selectedOption) {
-                console.info("-->" + voices[i]);
-                utterThis.voice = voices[i];
-                utterThis.lang = 'pt-BR';
-                // window.speechSynthesis.speak(utterThis);
+            console.info("-->" + voices[i]);
+            utterThis.voice = voices[i];
+            utterThis.lang = 'pt-BR';
+            // window.speechSynthesis.speak(utterThis);
             // }
         }
     }
