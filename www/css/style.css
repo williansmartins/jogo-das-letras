@@ -1,36 +1,41 @@
-.hide {
+body .wrapper {
+  width: 850px;
+  outline: solid;
+  margin: 0 auto;
+}
+body .wrapper .hide {
   display: none;
 }
-.voltar {
+body .wrapper .voltar {
   display: block;
 }
-.jogos {
+body .wrapper .jogos {
   width: 640px;
   margin: 0 auto;
   text-align: center;
 }
-.jogos .jogo {
+body .wrapper .jogos .jogo {
   outline: solid 1px green;
   margin-bottom: 20px;
   float: left;
   margin-right: 20px;
 }
-.jogos .jogo .de,
-.jogos .jogo .para,
-.jogos .jogo .seta {
+body .wrapper .jogos .jogo .de,
+body .wrapper .jogos .jogo .para,
+body .wrapper .jogos .jogo .seta {
   height: 150px;
   text-decoration: none;
   display: block;
   float: left;
 }
-.jogos .jogo .de,
-.jogos .jogo .para {
+body .wrapper .jogos .jogo .de,
+body .wrapper .jogos .jogo .para {
   width: 120px;
 }
-.jogos .jogo .seta {
+body .wrapper .jogos .jogo .seta {
   width: 60px;
 }
-.letras .letra {
+body .wrapper .letras .letra {
   width: 150px;
   height: 150px;
   float: left;
@@ -39,7 +44,7 @@
   cursor: pointer;
   overflow: hidden;
 }
-.letras .letra span {
+body .wrapper .letras .letra span {
   display: block;
   font-size: 60px;
   text-transform: uppercase;
@@ -47,11 +52,41 @@
   line-height: 150px;
   font-family: Arial, Helvetica, sans-serif;
 }
-.letras .letra.selecionada {
+body .wrapper .letras .letra.selecionada {
   background-color: red;
   color: white;
 }
-.letras .letra img {
+body .wrapper .letras .letra img {
   display: none;
   width: 100%;
+}
+body .wrapper.som-imagem h1 {
+  text-align: center;
+}
+body .wrapper.som-imagem .principal {
+  display: block;
+  width: 120px;
+  margin: 0 auto;
+  border: solid 1px gray;
+  border-radius: 10px;
+  display: table;
+  padding: 5px;
+}
+body .wrapper.som-imagem .imagens {
+  display: table;
+  height: 150px;
+  margin: 0 auto;
+}
+body .wrapper.som-imagem .imagens .imagem {
+  width: 150px;
+  height: 150px;
+  border: solid 1px gray;
+  border-radius: 10px;
+  float: left;
+  margin: 5px;
+  overflow: hidden;
+}
+body .wrapper.som-imagem .imagens .imagem img {
+  width: 100%;
+  padding: 5px;
 }

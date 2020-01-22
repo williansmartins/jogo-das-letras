@@ -1,79 +1,130 @@
-.hide{
-    display: none;
-}
+body{
+    .wrapper{
+        width: 850px;
+        outline: solid;
+        margin: 0 auto;
 
-.voltar{
-    display: block;
-}
-
-.jogos{
-
-    // outline: solid 1px gray;
-    width: 640px;
-    margin: 0 auto;
-    text-align: center;
-
-    .jogo{
-        outline: solid 1px green;
-        // width: 640px;
-        margin-bottom: 20px;
-        float: left;
-        margin-right: 20px;
-
-        .de, .para, .seta{
-            height: 150px;
-            text-decoration: none;
-            display: block;
-            float: left;
-        }
-
-        .de, .para{
-            width: 120px;
-            // outline: solid 1px blue;
-            // background-color: blue;
-        }
-
-        .seta{
-            // outline: solid 1px pink;
-            width: 60px;
-            // background-color: pink;
-        }
-    }
-}
-
-.letras{
-
-    .letra{
-        width: 150px;
-        height: 150px;
-        float: left;
-        outline: solid 1px black;
-        margin: 10px;
-        cursor: pointer;
-        overflow: hidden;
-
-        span{
-            display: block;
-            font-size: 60px;
-            // outline: solid;
-            text-transform: uppercase;
-            text-align: center;
-            // padding-top: 20px;
-            // padding-bottom: 20px;
-            line-height: 150px;
-            // white-space: nowrap;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        
-        &.selecionada{
-            background-color: red;
-            color: white;
-        }
-        
-        img{
+        .hide{
             display: none;
-            width: 100%;
+        }
+        
+        .voltar{
+            display: block;
+        }
+        
+        
+        
+        .jogos{
+        
+            // outline: solid 1px gray;
+            width: 640px;
+            margin: 0 auto;
+            text-align: center;
+        
+            .jogo{
+                outline: solid 1px green;
+                // width: 640px;
+                margin-bottom: 20px;
+                float: left;
+                margin-right: 20px;
+        
+                .de, .para, .seta{
+                    height: 150px;
+                    text-decoration: none;
+                    display: block;
+                    float: left;
+                }
+        
+                .de, .para{
+                    width: 120px;
+                    // outline: solid 1px blue;
+                    // background-color: blue;
+                }
+        
+                .seta{
+                    // outline: solid 1px pink;
+                    width: 60px;
+                    // background-color: pink;
+                }
+            }
+        }
+        
+        .letras{
+        
+            .letra{
+                width: 150px;
+                height: 150px;
+                float: left;
+                outline: solid 1px black;
+                margin: 10px;
+                cursor: pointer;
+                overflow: hidden;
+        
+                span{
+                    display: block;
+                    font-size: 60px;
+                    // outline: solid;
+                    text-transform: uppercase;
+                    text-align: center;
+                    // padding-top: 20px;
+                    // padding-bottom: 20px;
+                    line-height: 150px;
+                    // white-space: nowrap;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                
+                &.selecionada{
+                    background-color: red;
+                    color: white;
+                }
+                
+                img{
+                    display: none;
+                    width: 100%;
+                }
+            }
+        
+        }
+
+        &.som-imagem{
+            h1{
+                text-align: center;
+            }
+
+            .principal{
+                display: block;
+                width: 120px;
+                // outline: solid ;
+                margin: 0 auto;
+                border: solid 1px gray;
+                border-radius: 10px;
+                display: table;
+                padding: 5px;
+            }
+
+            .imagens{
+                display: table;
+                height: 150px;
+                margin: 0 auto;
+
+                .imagem{
+                    width: 150px;
+                    height: 150px;
+                    border: solid 1px gray;
+                    border-radius: 10px;
+                    float: left;
+                    margin: 5px;
+                    overflow: hidden;
+
+                    img{
+                        width: 100%;
+                        padding: 5px;
+                    }
+                }
+
+            }
+
+
         }
     }
-
 }
