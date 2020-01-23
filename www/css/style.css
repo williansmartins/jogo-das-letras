@@ -65,8 +65,8 @@ body .wrapper .letras .letra a.som-letra {
   width: 30px;
   height: 30px;
   display: none;
-  top: 4px;
-  right: 4px;
+  bottom: 4px;
+  left: 4px;
   border-radius: 20px;
   z-index: 1;
 }
@@ -77,8 +77,8 @@ body .wrapper .letras .letra a.som-imagem {
   width: 30px;
   height: 30px;
   display: none;
-  top: 39px;
-  right: 4px;
+  bottom: 4px;
+  left: 40px;
   border-radius: 20px;
   z-index: 1;
 }
@@ -88,8 +88,8 @@ body .wrapper .letras .letra a.imagem {
   width: 30px;
   height: 30px;
   display: none;
-  top: 74px;
-  right: 4px;
+  bottom: 4px;
+  left: 76px;
   border-radius: 20px;
   z-index: 1;
 }

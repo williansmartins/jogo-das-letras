@@ -48,7 +48,7 @@ var letrasJson = {
         {
             "letra": "h",
             "imagem": "helicóptero",
-            "imagemUrl": "helicoptero.jpeg"
+            "imagemUrl": "helicoptero.png"
         },
         {
             "letra": "i",
@@ -88,7 +88,7 @@ var letrasJson = {
         {
             "letra": "p",
             "imagem": "pato",
-            "imagemUrl": "pato.jpeg"
+            "imagemUrl": "pato.png"
         },
         {
             "letra": "q",
