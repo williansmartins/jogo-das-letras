@@ -199,20 +199,31 @@ Script = {
         for (letra in letrasJson.itens) {
             var letra = letrasJson.itens[letra];
 
-            $(".letras").append(`<div class='letra'>
+            $(".letras").append(`
+            <div class='letra'>
                 <span class='caractere'>`+ letra.letra + `</span>
-                <a href="#" class='som'>.</a>
-                <a href="#" class='imagem'>..</a>
+                <a href="#" class='som-letra' data-som-letra='` + letra.letra + `'></a>
+                <a href="#" class='som-imagem' data-som-imagem='` + letra.imagem + `'></a>
+                <a href="#" class='imagem'></a>
                 <img src='img/`+ letra.imagemUrl + `' alt="` + letra.imagem + `">
             </div>`);
         };
 
-        $(".letra").click(function () {
-            var texto = $(this).find("img").attr('alt');
-            $(this).find("span.caractere").toggle();
+        $(".letra .som-letra").click(function () {
+            //falar o som
+            var texto = $(this).attr('data-som-letra');
             Script.falando(texto)
+        });
 
-            var imagem = $(this).find("img");
+        $(".letra .som-imagem").click(function () {
+            //falar o som
+            var texto = $(this).attr('data-som-imagem');
+            Script.falando(texto)
+        });
+        
+        $(".letra .imagem").click(function () {
+            $(this).parent().find("span.caractere").toggle();
+            var imagem = $(this).parent().find("img");
             $(imagem).toggle();
         });
     },
@@ -221,6 +232,10 @@ Script = {
         $(".btn-cursiva").click(function () {
             $(".letra span").css('font-family', 'cursive');
         });
+        
+        $(".btn-forma").click(function () {
+            $(".letra span").css('font-family', 'arial');
+        });
 
         $(".btn-maiuscula").click(function () {
             $(".letra span").css('text-transform', 'uppercase');
@@ -228,10 +243,6 @@ Script = {
 
         $(".btn-minuscula").click(function () {
             $(".letra span").css('text-transform', 'lowercase');
-        });
-
-        $(".btn-forma").click(function () {
-            $(".letra span").css('font-family', 'arial');
         });
 
         $(".btn-randomize").click(function () {
