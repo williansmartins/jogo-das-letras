@@ -43,12 +43,12 @@ var letrasJson = {
         {
             "letra": "g",
             "imagem": "gato",
-            "imagemUrl": "gato.jpeg"
+            "imagemUrl": "gato.png"
         },
         {
             "letra": "h",
             "imagem": "helicóptero",
-            "imagemUrl": "helicóptero.jpeg"
+            "imagemUrl": "helicoptero.jpeg"
         },
         {
             "letra": "i",
@@ -58,7 +58,7 @@ var letrasJson = {
         {
             "letra": "j",
             "imagem": "jacaré",
-            "imagemUrl": "jacaré.jpeg"
+            "imagemUrl": "jacare.jpeg"
         },
         {
             "letra": "k",
@@ -73,7 +73,7 @@ var letrasJson = {
         {
             "letra": "m",
             "imagem": "maçã",
-            "imagemUrl": "maçã.jpeg"
+            "imagemUrl": "maca.jpeg"
         },
         {
             "letra": "n",
@@ -118,7 +118,7 @@ var letrasJson = {
         {
             "letra": "v",
             "imagem": "violão",
-            "imagemUrl": "violão.jpeg"
+            "imagemUrl": "violao.jpeg"
         },
         {
             "letra": "w",
@@ -205,23 +205,24 @@ Script = {
                 <a href="#" class='som-letra' data-som-letra='` + letra.letra + `'></a>
                 <a href="#" class='som-imagem' data-som-imagem='` + letra.imagem + `'></a>
                 <a href="#" class='imagem'></a>
-                <img src='img/`+ letra.imagemUrl + `' alt="` + letra.imagem + `">
+                <img src='img/alfabeto/`+ letra.imagemUrl + `' alt="` + letra.imagem + `">
             </div>`);
         };
 
-        $(".letra .som-letra").click(function () {
-            //falar o som
+        $(".letra .som-letra").click(function (e) {
+            e.preventDefault();
             var texto = $(this).attr('data-som-letra');
             Script.falando(texto)
         });
 
-        $(".letra .som-imagem").click(function () {
-            //falar o som
+        $(".letra .som-imagem").click(function (e) {
+            e.preventDefault();
             var texto = $(this).attr('data-som-imagem');
             Script.falando(texto)
         });
         
-        $(".letra .imagem").click(function () {
+        $(".letra .imagem").click(function (e) {
+            e.preventDefault();
             $(this).parent().find("span.caractere").toggle();
             var imagem = $(this).parent().find("img");
             $(imagem).toggle();
