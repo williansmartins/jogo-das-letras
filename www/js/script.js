@@ -162,20 +162,10 @@ Script = {
     },
 
     randomize: function () {
-        // var alfabeto = Script.random('a', 'z');
-        // alfabeto.forEach(element => {
-        //     console.info("-->" + element);
-        // });
-
         var letras = $(".letra");
         Script.shuffleAds(letras);
 
-        // $(".letras").empty();
-
         $(".letra").each(function (chave, valor) {
-            console.info("-->" + chave);
-            console.info("-->" + valor);
-            // $(".letras").append(valor);
             $(valor).remove();
         });
 
@@ -275,7 +265,6 @@ Script = {
         // var selectedOption = synth.getVoices();
         for (i = 0; i < voices.length; i++) {
             // if(voices[i].name === selectedOption) {
-            console.info("-->" + voices[i]);
             utterThis.voice = voices[i];
             utterThis.lang = 'pt-BR';
             // window.speechSynthesis.speak(utterThis);
