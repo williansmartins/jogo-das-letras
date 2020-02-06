@@ -248,6 +248,42 @@ Script = {
         $(".btn-nayara").click(function () {
             Script.falando('mamae nayara, eu te amo muito, eu quero que você brinque muito comigo, eu te amo infinito.');
         });
+
+        $(".btn-felipe").click(function () {
+            Script.falando(`
+            Elevo os meus olhos para os montes; de onde me vem o socorro? 
+
+            O meu socorro vem do Senhor, que fez os céus e a terra.
+           
+            Não deixará vacilar o teu pé; aquele que te guarda não dormirá.
+           
+            Eis que não dormirá nem dormirá aquele que guarda a Israel.
+           
+            O Senhor é quem te guarda; o Senhor é a tua sombra à tua mão direita.
+           
+            De dia o sol não te ferirá, nem a lua de noite.
+           
+            O Senhor te guardará de todo o mal; ele guardará a tua vida.
+           
+            O Senhor guardará a tua saída e a tua entrada, desde agora e para sempre.
+            `);
+        });
+
+        $(".btn-miguel").click(function () {
+            Script.falando(`
+            O Senhor é o meu pastor; nada me faltará.
+
+            Deitar-me faz em pastos verdejantes; guia-me mansamente a águas tranqüilas.
+          
+            Refrigera a minha alma; guia-me nas veredas da justiça por amor do seu nome.
+          
+            Ainda que eu ande pelo vale da sombra da morte, não temerei mal algum, porque tu estás comigo; a tua vara e o teu cajado me consolam.
+          
+            Preparas uma mesa perante mim na presença dos meus inimigos; unges com óleo a minha cabeça, o meu cálice transborda.
+          
+            Certamente que a bondade e a misericórdia me seguirão todos os dias da minha vida, e habitarei na casa do Senhor por longos dias.
+            `);
+        });
     },
 
     falando: function (letra) {

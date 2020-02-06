@@ -64,7 +64,6 @@ body .wrapper .letras .letra a.som-letra {
   position: absolute;
   width: 30px;
   height: 30px;
-  display: none;
   bottom: 4px;
   left: 4px;
   border-radius: 20px;
@@ -76,7 +75,6 @@ body .wrapper .letras .letra a.som-imagem {
   position: absolute;
   width: 30px;
   height: 30px;
-  display: none;
   bottom: 4px;
   left: 40px;
   border-radius: 20px;
@@ -87,7 +85,6 @@ body .wrapper .letras .letra a.imagem {
   position: absolute;
   width: 30px;
   height: 30px;
-  display: none;
   bottom: 4px;
   left: 76px;
   border-radius: 20px;
