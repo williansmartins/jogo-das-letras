@@ -197,7 +197,7 @@ Script = {
                 <div class='botoes'>
                     <a href="#" class='som-letra' data-som-letra='` + letra.letra + `'></a>
                     <a href="#" class='som-imagem ' data-som-imagem='` + letra.imagem + `'></a>
-                    <a href="#" class='imagem'></a>
+                    <a href="#" class=' hide imagem'></a>
                 </div>
             </div>`);
         };
@@ -224,6 +224,9 @@ Script = {
             e.preventDefault();
             $(this).parent().find("span.caractere").toggle();
             var imagem = $(this).parent().find("img").toggle();
+
+            var texto = $(this).parent().find(".som-imagem").attr('data-som-imagem');
+            Script.falando(texto)
         });
     },
 
