@@ -80,36 +80,39 @@ body .wrapper.letra-imagem .letras .letra {
   position: relative;
 }
 body .wrapper.letra-imagem .letras .letra .botoes {
-  margin-left: 10px;
   position: absolute;
-  top: 115px;
-  left: 69px;
+}
+body .wrapper.letra-imagem .letras .letra .botoes.descoberta {
+  bottom: 0px;
+  right: 6px;
+}
+body .wrapper.letra-imagem .letras .letra .botoes.formatacao {
+  top: 3px;
+  left: 4px;
 }
 body .wrapper.letra-imagem .letras .letra .botoes a {
   display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
 }
 body .wrapper.letra-imagem .letras .letra .botoes a.som-letra {
   background-color: #FF5722;
-  width: 30px;
-  height: 30px;
-  border-radius: 20px;
-  z-index: 1;
 }
 body .wrapper.letra-imagem .letras .letra .botoes a.som-imagem {
   background-color: #31bb0f;
-  color: white;
-  width: 30px;
-  height: 30px;
-  border-radius: 20px;
-  z-index: 1;
 }
-body .wrapper.letra-imagem .letras .letra .botoes a.imagem {
+body .wrapper.letra-imagem .letras .letra .botoes a.tres {
   background-color: #2196F3;
-  width: 30px;
-  height: 30px;
-  border-radius: 20px;
-  z-index: 1;
-  display: none;
+}
+body .wrapper.letra-imagem .letras .letra .botoes a.quatro {
+  background-color: #ff1dbb;
+}
+body .wrapper.letra-imagem .letras .letra .botoes a.cinco {
+  background-color: #0bd4f7;
+}
+body .wrapper.letra-imagem .letras .letra .botoes a.seis {
+  background-color: #000000;
 }
 body .wrapper.letra-imagem .letras .letra span.caractere {
   display: block;

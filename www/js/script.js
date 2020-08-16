@@ -193,11 +193,17 @@ Script = {
             <div class='letra'>
                 <span class='cursor caractere'>`+ letra.letra + `</span>
                 <img class='cursor' src='img/alfabeto/`+ letra.imagemUrl + `' alt="` + letra.imagem + `">
+                
+                <div class='botoes formatacao'>
+                    <a href="javascript:void(0)" class='tres'></a>
+                    <a href="javascript:void(0)" class='quatro'></a>
+                    <a href="javascript:void(0)" class='cinco'></a>
+                    <a href="javascript:void(0)" class='seis'></a>
+                </div>
 
-                <div class='botoes'>
-                    <a href="#" class='som-letra' data-som-letra='` + letra.letra + `'></a>
-                    <a href="#" class='som-imagem ' data-som-imagem='` + letra.imagem + `'></a>
-                    <a href="#" class=' hide imagem'></a>
+                <div class='botoes descoberta'>
+                    <a href="javascript:void(0)" class='som-letra' data-som-letra='` + letra.letra + `'></a>
+                    <a href="javascript:void(0)" class='som-imagem ' data-som-imagem='` + letra.imagem + `'></a>
                 </div>
             </div>`);
         };
@@ -214,10 +220,24 @@ Script = {
             Script.falando(texto)
         });
         
-        $(".letra .imagem, .letra .som-imagem").click(function (e) {
+        $(".letra .tres").click(function (e) {
             e.preventDefault();
-            $(this).parent().find("span.caractere").toggle();
-            var imagem = $(this).parent().find("img").toggle();
+            Script.mudarMaiuscula(this);
+        });
+
+        $(".letra .quatro").click(function (e) {
+            e.preventDefault();
+            Script.mudarMinuscula(this);
+        });
+
+        $(".letra .cinco").click(function (e) {
+            e.preventDefault();
+            Script.mudarCursiva(this);
+        });
+
+        $(".letra .seis").click(function (e) {
+            e.preventDefault();
+            Script.mudarForma(this);
         });
 
         $(".letra img, .letra .caractere").click(function (e) {
@@ -228,6 +248,22 @@ Script = {
             var texto = $(this).parent().find(".som-imagem").attr('data-som-imagem');
             Script.falando(texto)
         });
+    },
+
+    mudarCursiva: function(atual){
+        $(atual).parent().parent().find(".caractere").css('font-family', 'LearningCurve');
+    },
+
+    mudarForma: function(atual){
+        $(atual).parent().parent().find(".caractere").css('font-family', 'arial');
+    },
+
+    mudarMaiuscula: function(atual){
+        $(atual).parent().parent().find(".caractere").css('text-transform', 'uppercase');
+    },
+
+    mudarMinuscula: function(atual){
+        $(atual).parent().parent().find(".caractere").css('text-transform', 'lowercase');
     },
 
     clicks: function () {
