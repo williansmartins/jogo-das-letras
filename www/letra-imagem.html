@@ -10,7 +10,7 @@
     <script src="js/script.js"></script>
 </head>
 <body>
-    <div class="wrapper letra-imagem">
+    <div class="wrapper letra-imagem" ng-app="principal" ng-controller="Controller">
         <a href="index.html" class="voltar">
             <img src="img/voltar.jpg" alt="voltar"/>
         </a>
@@ -28,8 +28,33 @@
         </div>
         
         <div class="letras">
-            
+            <div class="letra" ng-repeat="letra in letras.itens" ng-init="letra.mostrarLetra = true">
+                <span class="cursor caractere" ng-if="letra.mostrarLetra">{{letra.letra}}</span>
+                <img class="cursor" 
+                    ng-src="img/alfabeto/{{letra.imagemUrl}}" 
+                    ng-if="!letra.mostrarLetra" 
+                    ng-click="virarCardLetra(letra)"
+                    alt="{{letra.imagem}}">
+                
+                <div class="botoes formatacao">
+                    <a href="javascript:void(0)" class="tres maiuscula">&uarr;</a>
+                    <a href="javascript:void(0)" class="quatro minuscula">&darr;</a>
+                    <a href="javascript:void(0)" class="cinco cursiva">A</a></a>
+                    <a href="javascript:void(0)" class="seis forma">A</a>
+                </div>
+
+                <div class="botoes descoberta">
+                    <a href="javascript:void(0)" class="som-letra" ng-click="virarCardLetra(letra)"></a>
+                    <a href="javascript:void(0)" class="som-imagem " ng-click="virarCardImagem(letra)"></a>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <div id="scripts">
+        <script type="text/javascript" src="js/vendor/angular/angular-1.5.8.js"></script>
+        <script type="text/javascript" src="js/app/app.js"></script>
+        <script type="text/javascript" src="js/app/controller.js"></script>
     </div>
 </body>
 </html>

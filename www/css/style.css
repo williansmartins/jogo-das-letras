@@ -7,9 +7,6 @@ body .wrapper {
   width: 850px;
   margin: 0 auto;
 }
-body .wrapper .hide {
-  display: none;
-}
 body .wrapper .voltar {
   display: block;
 }
@@ -130,7 +127,6 @@ body .wrapper.letra-imagem .letras .letra.selecionada {
   color: white;
 }
 body .wrapper.letra-imagem .letras .letra img {
-  display: none;
   width: 100%;
 }
 body .wrapper.letra-imagem .acoes {
@@ -160,6 +156,9 @@ body .wrapper.letra-imagem .letras {
 }
 .cursiva {
   font-family: LearningCurve;
+}
+.hide {
+  display: none;
 }
 /* FONTS */
 @font-face {
