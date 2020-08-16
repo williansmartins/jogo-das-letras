@@ -228,18 +228,22 @@ Script = {
     clicks: function () {
         $(".btn-cursiva, .cursiva").click(function () {
             $(".letra span").css('font-family', 'LearningCurve');
+            Script.falando("letra cursiva");
         });
         
         $(".btn-forma, .forma").click(function () {
             $(".letra span").css('font-family', 'arial');
+            Script.falando("letra de forma");
         });
 
         $(".btn-maiuscula, .maiuscula").click(function () {
             $(".letra span").css('text-transform', 'uppercase');
+            Script.falando("letra maiúscula");
         });
 
         $(".btn-minuscula, .minuscula").click(function () {
             $(".letra span").css('text-transform', 'lowercase');
+            Script.falando("letra minúscula");
         });
 
         $(".btn-randomize").click(function () {
