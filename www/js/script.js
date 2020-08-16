@@ -6,6 +6,8 @@ $(document).ready(function () {
     Script.clicks();
     // Script.aplicarFogos();
     $('.fechar').hide();
+
+    window.speechSynthesis.cancel();
 });
 
 var letrasJson = {
@@ -341,7 +343,7 @@ Script = {
     },
 
     falando: function (letra) {
-        var voices = window.speechSynthesis.cancel();
+        window.speechSynthesis.cancel();
         var voices = window.speechSynthesis.getVoices();
         var msg = new SpeechSynthesisUtterance(letra);
         msg.lang = "pt-BR";
