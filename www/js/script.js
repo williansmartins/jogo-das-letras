@@ -195,10 +195,10 @@ Script = {
                 <img class='cursor' src='img/alfabeto/`+ letra.imagemUrl + `' alt="` + letra.imagem + `">
                 
                 <div class='botoes formatacao'>
-                    <a href="javascript:void(0)" class='tres'></a>
-                    <a href="javascript:void(0)" class='quatro'></a>
-                    <a href="javascript:void(0)" class='cinco'></a>
-                    <a href="javascript:void(0)" class='seis'></a>
+                    <a href="javascript:void(0)" class='tres maiuscula'>&uarr;</a>
+                    <a href="javascript:void(0)" class='quatro minuscula'>&darr;</a>
+                    <a href="javascript:void(0)" class='cinco cursiva'>A</a></a>
+                    <a href="javascript:void(0)" class='seis forma'>A</a>
                 </div>
 
                 <div class='botoes descoberta'>

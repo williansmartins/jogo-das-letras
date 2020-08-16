@@ -95,6 +95,9 @@ body .wrapper.letra-imagem .letras .letra .botoes a {
   width: 25px;
   height: 25px;
   border-radius: 20px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
 }
 body .wrapper.letra-imagem .letras .letra .botoes a.som-letra {
   background-color: #FF5722;
@@ -148,15 +151,15 @@ body .wrapper.letra-imagem .acoes a {
   padding-top: 15px;
   background-color: #81d700;
 }
-body .wrapper.letra-imagem .acoes a.cursiva {
-  font-family: LearningCurveDashed;
-}
 body .wrapper.letra-imagem .letras {
   display: block;
   overflow: auto;
 }
 .cursor {
   cursor: pointer;
+}
+.cursiva {
+  font-family: LearningCurve;
 }
 /* FONTS */
 @font-face {
