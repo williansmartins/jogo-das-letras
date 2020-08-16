@@ -5,132 +5,132 @@ angular.module('principal')
     $scope.letras = {
       "itens": [
           {
-              "letra": "a",
+              "letra": "A",
               "imagem": "abelha",
               "imagemUrl": "abelha.jpeg"
           },
           {
-              "letra": "b",
+              "letra": "B",
               "imagem": "bola",
               "imagemUrl": "bola.jpeg"
           },
           {
-              "letra": "c",
+              "letra": "C",
               "imagem": "cachorro",
               "imagemUrl": "cachorro.jpeg"
           },
           {
-              "letra": "d",
+              "letra": "D",
               "imagem": "dado",
               "imagemUrl": "dado.jpeg"
           },
           {
-              "letra": "e",
+              "letra": "E",
               "imagem": "elefante",
               "imagemUrl": "elefante.jpeg"
           },
           {
-              "letra": "f",
+              "letra": "F",
               "imagem": "faca",
               "imagemUrl": "faca.jpeg"
           },
           {
-              "letra": "g",
+              "letra": "G",
               "imagem": "gato",
               "imagemUrl": "gato.png"
           },
           {
-              "letra": "h",
+              "letra": "H",
               "imagem": "helicóptero",
               "imagemUrl": "helicoptero.png"
           },
           {
-              "letra": "i",
+              "letra": "I",
               "imagem": "indio",
               "imagemUrl": "indio.jpeg"
           },
           {
-              "letra": "j",
+              "letra": "J",
               "imagem": "jacaré",
               "imagemUrl": "jacare.jpeg"
           },
           {
-              "letra": "k",
+              "letra": "K",
               "imagem": "kiwi",
               "imagemUrl": "kiwi.jpeg"
           },
           {
-              "letra": "l",
+              "letra": "L",
               "imagem": "laranja",
               "imagemUrl": "laranja.jpeg"
           },
           {
-              "letra": "m",
+              "letra": "M",
               "imagem": "maçã",
               "imagemUrl": "maca.jpeg"
           },
           {
-              "letra": "n",
+              "letra": "N",
               "imagem": "navio",
               "imagemUrl": "navio.jpeg"
           },
           {
-              "letra": "o",
+              "letra": "O",
               "imagem": "ovo",
               "imagemUrl": "ovo.jpeg"
           },
           {
-              "letra": "p",
+              "letra": "P",
               "imagem": "pato",
               "imagemUrl": "pato.png"
           },
           {
-              "letra": "q",
+              "letra": "Q",
               "imagem": "queijo",
               "imagemUrl": "queijo.jpeg"
           },
           {
-              "letra": "r",
+              "letra": "R",
               "imagem": "rato",
               "imagemUrl": "rato.jpeg"
           },
           {
-              "letra": "s",
+              "letra": "S",
               "imagem": "sapo",
               "imagemUrl": "sapo.jpeg"
           },
           {
-              "letra": "t",
+              "letra": "T",
               "imagem": "tigre",
               "imagemUrl": "tigre.jpeg"
           },
           {
-              "letra": "u",
+              "letra": "U",
               "imagem": "uva",
               "imagemUrl": "uva.jpeg"
           },
           {
-              "letra": "v",
+              "letra": "V",
               "imagem": "violão",
               "imagemUrl": "violao.jpeg"
           },
           {
-              "letra": "w",
+              "letra": "W",
               "imagem": "willians",
               "imagemUrl": "willians.jpeg"
           },
           {
-              "letra": "x",
+              "letra": "X",
               "imagem": "xadrez",
               "imagemUrl": "xadrez.jpeg"
           },
           {
-              "letra": "y",
+              "letra": "Y",
               "imagem": "yasmin",
               "imagemUrl": "yasmin.jpeg"
           },
           {
-              "letra": "z",
+              "letra": "Z",
               "imagem": "zebra",
               "imagemUrl": "zebra.jpeg"
           }
@@ -139,23 +139,61 @@ angular.module('principal')
 
     $scope.mostrarLetra = true;
 
-    $scope.apresentarImagens = function(){
+    $scope.mudarTodasParaMaiuscula = function(){
+        $(".letra span").css('text-transform', 'uppercase');
+        Script.falando("letra maiúscula");
+    }
 
+    $scope.mudarTodasParaMinuscula = function(){
+        $(".letra span").css('text-transform', 'lowercase');
+        Script.falando("letra minúscula");
+    }
+
+    $scope.mudarTodasParaCursiva = function(){
+        $(".letra span").css('font-family', 'LearningCurve');
+        Script.falando("letra cursiva");
+    }
+
+    $scope.mudarTodasParaForma = function(){
+        $(".letra span").css('font-family', 'arial');
+        Script.falando("letra de forma");
+    }
+
+    $scope.mudarParaMinuscula = function(letra){
+        var modificado = letra.letra.toLowerCase();
+        letra.letra = modificado;
+        letra.maiuscula = !letra.maiuscula;
+        Script.falando("letra minúscula");
+    }
+
+    $scope.mudarParaMaiuscula = function(letra){
+        var modificado = letra.letra.toUpperCase();
+        letra.letra = modificado;
+        letra.maiuscula = !letra.maiuscula;
+        Script.falando("letra maiúscula");
+    }
+
+    $scope.mudarParaCursiva = function(letra){
+        letra.cursiva = !letra.cursiva;
+        
+        if(letra.cursiva){
+            Script.falando("letra cursiva");
+        }else{
+            Script.falando("letra de forma");
+        }
     }
 
     $scope.virarCardLetra = function(letra){
       Script.falando(letra.letra);
-      $scope.mostrarLetra = !$scope.mostrarLetra;
     }
 
     $scope.virarCardImagem = function(letra){
       Script.falando(letra.imagem);
-
       letra.mostrarLetra = !letra.mostrarLetra;
     }
 
     init = function() {
-        $scope.apresentarImagens();
+        window.speechSynthesis.cancel();
     };
 
 	init();

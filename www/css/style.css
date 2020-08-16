@@ -117,10 +117,8 @@ body .wrapper.letra-imagem .letras .letra .botoes a.seis {
 body .wrapper.letra-imagem .letras .letra span.caractere {
   display: block;
   font-size: 60px;
-  text-transform: uppercase;
   text-align: center;
   line-height: 150px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 body .wrapper.letra-imagem .letras .letra.selecionada {
   background-color: red;

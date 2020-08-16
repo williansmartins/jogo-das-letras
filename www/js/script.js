@@ -1,6 +1,5 @@
 $(document).ready(function () {
     //Script.colorir();
-    Script.apresentarImagens();
     // Script.cursiva();
     // Script.randomize();
     Script.clicks();
@@ -53,79 +52,8 @@ Script = {
         });
     },
 
-    apresentarImagens: function () {
-
-
-
-        
-        
-        $(".letra .tres").click(function (e) {
-            e.preventDefault();
-            Script.mudarMaiuscula(this);
-        });
-
-        $(".letra .quatro").click(function (e) {
-            e.preventDefault();
-            Script.mudarMinuscula(this);
-        });
-
-        $(".letra .cinco").click(function (e) {
-            e.preventDefault();
-            Script.mudarCursiva(this);
-        });
-
-        $(".letra .seis").click(function (e) {
-            e.preventDefault();
-            Script.mudarForma(this);
-        });
-
-        $(".letra img, .letra .caractere").click(function (e) {
-            e.preventDefault();
-            $(this).parent().find("span.caractere").toggle();
-            var imagem = $(this).parent().find("img").toggle();
-
-            var texto = $(this).parent().find(".som-imagem").attr('data-som-imagem');
-            Script.falando(texto)
-        });
-    },
-
-    mudarCursiva: function(atual){
-        $(atual).parent().parent().find(".caractere").css('font-family', 'LearningCurve');
-    },
-
-    mudarForma: function(atual){
-        $(atual).parent().parent().find(".caractere").css('font-family', 'arial');
-    },
-
-    mudarMaiuscula: function(atual){
-        $(atual).parent().parent().find(".caractere").css('text-transform', 'uppercase');
-    },
-
-    mudarMinuscula: function(atual){
-        $(atual).parent().parent().find(".caractere").css('text-transform', 'lowercase');
-    },
-
     clicks: function () {
-        $(".btn-cursiva, .cursiva").click(function () {
-            $(".letra span").css('font-family', 'LearningCurve');
-            Script.falando("letra cursiva");
-        });
         
-        $(".btn-forma, .forma").click(function () {
-            $(".letra span").css('font-family', 'arial');
-            Script.falando("letra de forma");
-        });
-
-        $(".btn-maiuscula, .maiuscula").click(function () {
-            $(".letra span").css('text-transform', 'uppercase');
-            Script.falando("letra maiúscula");
-        });
-
-        $(".btn-minuscula, .minuscula").click(function () {
-            $(".letra span").css('text-transform', 'lowercase');
-            Script.falando("letra minúscula");
-        });
-
         $(".btn-randomize").click(function () {
             Script.randomize();
             Script.falando('misturando tudo');
