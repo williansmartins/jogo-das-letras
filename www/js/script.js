@@ -220,19 +220,19 @@ Script = {
     },
 
     clicks: function () {
-        $(".btn-cursiva").click(function () {
-            $(".letra span").css('font-family', 'cursive');
+        $(".btn-cursiva, .cursiva").click(function () {
+            $(".letra span").css('font-family', 'LearningCurve');
         });
         
-        $(".btn-forma").click(function () {
+        $(".btn-forma, .forma").click(function () {
             $(".letra span").css('font-family', 'arial');
         });
 
-        $(".btn-maiuscula").click(function () {
+        $(".btn-maiuscula, .maiuscula").click(function () {
             $(".letra span").css('text-transform', 'uppercase');
         });
 
-        $(".btn-minuscula").click(function () {
+        $(".btn-minuscula, .minuscula").click(function () {
             $(".letra span").css('text-transform', 'lowercase');
         });
 
@@ -290,7 +290,7 @@ Script = {
         var voices = window.speechSynthesis.getVoices();
         var msg = new SpeechSynthesisUtterance(letra);
         msg.lang = "pt-BR";
-        // msg.voice = voices[9];
+        //msg.voice = voices[0];
         // msg.voiceURI = "native";
         // msg.volume = 1;
         // msg.rate = 1;
@@ -301,8 +301,8 @@ Script = {
         // var selectedOption = synth.getVoices();
         for (i = 0; i < voices.length; i++) {
             // if(voices[i].name === selectedOption) {
-            utterThis.voice = voices[i];
-            utterThis.lang = 'pt-BR';
+            //utterThis.voice = voices[i];
+            //utterThis.lang = 'pt-BR';
             // window.speechSynthesis.speak(utterThis);
             // }
         }

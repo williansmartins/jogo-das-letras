@@ -178,5 +178,52 @@ body{
 
 
         }
+
+        &.letra-imagem{
+
+            .acoes {
+                text-align: center;
+                display: block;
+                // outline: solid 1px blue;
+                overflow: auto;
+                
+                a{
+                    text-decoration: none;
+                    font-size: 60px;
+                    color: yellow;
+                    outline: solid 3px #FF5722;
+                    width: 100px;
+                    height: 100px;
+                    display: block;
+                    float: left;
+                    margin: 8px;
+                    padding-top: 15px;
+                    background-color: rgb(129, 215, 0);
+
+                    &.cursiva{
+                        font-family: LearningCurveDashed;
+                    }
+                }
+            }
+
+            .letras{
+                display: block;
+                // outline: solid 1px red;
+                overflow: auto;
+            }
+            
+        }
     }
 }
+
+/* FONTS */
+
+@font-face {
+    font-family: LearningCurveDashed;
+    src: url(../fonts/LearningCurveDashed.ttf);
+  }
+  
+  @font-face {
+    font-family: LearningCurve;
+    src: url(../fonts/LearningCurve.ttf);
+  }

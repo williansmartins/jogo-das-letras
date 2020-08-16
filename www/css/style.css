@@ -128,3 +128,37 @@ body .wrapper.som-imagem .imagens .imagem img {
   width: 100%;
   padding: 5px;
 }
+body .wrapper.letra-imagem .acoes {
+  text-align: center;
+  display: block;
+  overflow: auto;
+}
+body .wrapper.letra-imagem .acoes a {
+  text-decoration: none;
+  font-size: 60px;
+  color: yellow;
+  outline: solid 3px #FF5722;
+  width: 100px;
+  height: 100px;
+  display: block;
+  float: left;
+  margin: 8px;
+  padding-top: 15px;
+  background-color: #81d700;
+}
+body .wrapper.letra-imagem .acoes a.cursiva {
+  font-family: LearningCurveDashed;
+}
+body .wrapper.letra-imagem .letras {
+  display: block;
+  overflow: auto;
+}
+/* FONTS */
+@font-face {
+  font-family: LearningCurveDashed;
+  src: url(../fonts/LearningCurveDashed.ttf);
+}
+@font-face {
+  font-family: LearningCurve;
+  src: url(../fonts/LearningCurve.ttf);
+}
