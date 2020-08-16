@@ -218,6 +218,9 @@ Script = {
             e.preventDefault();
             var texto = $(this).attr('data-som-imagem');
             Script.falando(texto)
+
+            $(this).parent().parent().find("span.caractere").toggle();
+            $(this).parent().parent().find("img").toggle();
         });
         
         $(".letra .tres").click(function (e) {
@@ -338,6 +341,7 @@ Script = {
     },
 
     falando: function (letra) {
+        var voices = window.speechSynthesis.cancel();
         var voices = window.speechSynthesis.getVoices();
         var msg = new SpeechSynthesisUtterance(letra);
         msg.lang = "pt-BR";
