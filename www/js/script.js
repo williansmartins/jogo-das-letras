@@ -194,9 +194,11 @@ Script = {
                 <span class='cursor caractere'>`+ letra.letra + `</span>
                 <img class='cursor' src='img/alfabeto/`+ letra.imagemUrl + `' alt="` + letra.imagem + `">
 
-                <a href="#" class='som-letra' data-som-letra='` + letra.letra + `'></a>
-                <a href="#" class='som-imagem ' data-som-imagem='` + letra.imagem + `'></a>
-                <a href="#" class='hide imagem'></a>
+                <div class='botoes'>
+                    <a href="#" class='som-letra' data-som-letra='` + letra.letra + `'></a>
+                    <a href="#" class='som-imagem ' data-som-imagem='` + letra.imagem + `'></a>
+                    <a href="#" class='imagem'></a>
+                </div>
             </div>`);
         };
 
