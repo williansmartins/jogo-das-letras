@@ -191,11 +191,12 @@ Script = {
 
             $(".letras").append(`
             <div class='letra'>
-                <span class='caractere'>`+ letra.letra + `</span>
+                <span class='cursor caractere'>`+ letra.letra + `</span>
+                <img class='cursor' src='img/alfabeto/`+ letra.imagemUrl + `' alt="` + letra.imagem + `">
+
                 <a href="#" class='som-letra' data-som-letra='` + letra.letra + `'></a>
-                <a href="#" class='som-imagem' data-som-imagem='` + letra.imagem + `'></a>
-                <a href="#" class='imagem'></a>
-                <img src='img/alfabeto/`+ letra.imagemUrl + `' alt="` + letra.imagem + `">
+                <a href="#" class='som-imagem ' data-som-imagem='` + letra.imagem + `'></a>
+                <a href="#" class='hide imagem'></a>
             </div>`);
         };
 
@@ -211,11 +212,16 @@ Script = {
             Script.falando(texto)
         });
         
-        $(".letra .imagem").click(function (e) {
+        $(".letra .imagem, .letra .som-imagem").click(function (e) {
             e.preventDefault();
             $(this).parent().find("span.caractere").toggle();
-            var imagem = $(this).parent().find("img");
-            $(imagem).toggle();
+            var imagem = $(this).parent().find("img").toggle();
+        });
+
+        $(".letra img, .letra .caractere").click(function (e) {
+            e.preventDefault();
+            $(this).parent().find("span.caractere").toggle();
+            var imagem = $(this).parent().find("img").toggle();
         });
     },
 

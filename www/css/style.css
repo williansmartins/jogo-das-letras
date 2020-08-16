@@ -39,65 +39,6 @@ body .wrapper .jogos .jogo .para {
 body .wrapper .jogos .jogo .seta {
   width: 60px;
 }
-body .wrapper .letra:hover a {
-  display: block!important;
-}
-body .wrapper .letras .letra {
-  width: 150px;
-  height: 150px;
-  float: left;
-  outline: solid 1px black;
-  margin: 10px;
-  overflow: hidden;
-  position: relative;
-}
-body .wrapper .letras .letra span.caractere {
-  display: block;
-  font-size: 60px;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 150px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-body .wrapper .letras .letra a.som-letra {
-  background-color: #FF5722;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  bottom: 4px;
-  left: 4px;
-  border-radius: 20px;
-  z-index: 1;
-}
-body .wrapper .letras .letra a.som-imagem {
-  background-color: #7d66ff;
-  color: white;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  bottom: 4px;
-  left: 40px;
-  border-radius: 20px;
-  z-index: 1;
-}
-body .wrapper .letras .letra a.imagem {
-  background-color: #2196F3;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  bottom: 4px;
-  left: 76px;
-  border-radius: 20px;
-  z-index: 1;
-}
-body .wrapper .letras .letra.selecionada {
-  background-color: red;
-  color: white;
-}
-body .wrapper .letras .letra img {
-  display: none;
-  width: 100%;
-}
 body .wrapper.som-imagem h1 {
   text-align: center;
 }
@@ -128,6 +69,62 @@ body .wrapper.som-imagem .imagens .imagem img {
   width: 100%;
   padding: 5px;
 }
+body .wrapper.letra-imagem .letras .letra {
+  width: 150px;
+  height: 150px;
+  float: left;
+  outline: solid 1px black;
+  margin: 10px;
+  overflow: hidden;
+  position: relative;
+}
+body .wrapper.letra-imagem .letras .letra span.caractere {
+  display: block;
+  font-size: 60px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 150px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body .wrapper.letra-imagem .letras .letra a.som-letra {
+  background-color: #FF5722;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 4px;
+  left: 4px;
+  border-radius: 20px;
+  z-index: 1;
+}
+body .wrapper.letra-imagem .letras .letra a.som-imagem {
+  background-color: #7d66ff;
+  color: white;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 4px;
+  left: 40px;
+  border-radius: 20px;
+  z-index: 1;
+}
+body .wrapper.letra-imagem .letras .letra a.imagem {
+  background-color: #2196F3;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 4px;
+  left: 76px;
+  border-radius: 20px;
+  z-index: 1;
+}
+body .wrapper.letra-imagem .letras .letra.selecionada {
+  background-color: red;
+  color: white;
+}
+body .wrapper.letra-imagem .letras .letra img {
+  display: none;
+  width: 100%;
+}
 body .wrapper.letra-imagem .acoes {
   text-align: center;
   display: block;
@@ -152,6 +149,9 @@ body .wrapper.letra-imagem .acoes a.cursiva {
 body .wrapper.letra-imagem .letras {
   display: block;
   overflow: auto;
+}
+.cursor {
+  cursor: pointer;
 }
 /* FONTS */
 @font-face {

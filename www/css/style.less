@@ -59,83 +59,7 @@ body{
         
         .letra:hover a { 
             // background-color: yellow!important; 
-            display: block!important;
-        }
-
-        .letras{
-        
-            .letra{
-                width: 150px;
-                height: 150px;
-                float: left;
-                outline: solid 1px black;
-                margin: 10px;
-                // cursor: pointer;
-                overflow: hidden;
-                position: relative;
-
-        
-                span.caractere{
-                    display: block;
-                    font-size: 60px;
-                    // outline: solid;
-                    text-transform: uppercase;
-                    text-align: center;
-                    // padding-top: 20px;
-                    // padding-bottom: 20px;
-                    line-height: 150px;
-                    // white-space: nowrap;
-                    font-family: Arial, Helvetica, sans-serif;
-                }
-
-                a.som-letra{
-                    background-color: #FF5722;
-                    position: absolute;
-                    width: 30px;
-                    height: 30px;
-                    // display: none;
-                    bottom: 4px;
-                    left: 4px;
-                    border-radius: 20px;
-                    z-index: 1;
-                }
-
-                a.som-imagem{
-                    background-color: rgb(125, 102, 255);
-                    color: white;
-                    position: absolute;
-                    width: 30px;
-                    height: 30px;
-                    // display: none;
-                    bottom: 4px;
-                    left: 40px;
-                    border-radius: 20px;
-                    z-index: 1;
-                }
-
-                a.imagem{
-                    background-color: #2196F3;
-                    position: absolute;
-                    width: 30px;
-                    height: 30px;
-                    // display: none;
-                    bottom: 4px;
-                    left: 76px;
-                    border-radius: 20px;
-                    z-index: 1;
-                }
-                
-                &.selecionada{
-                    background-color: red;
-                    color: white;
-                }
-                
-                img{
-                    display: none;
-                    width: 100%;
-                }
-            }
-        
+            //display: block!important;
         }
 
         &.som-imagem{
@@ -181,6 +105,82 @@ body{
 
         &.letra-imagem{
 
+            .letras{
+        
+                .letra{
+                    width: 150px;
+                    height: 150px;
+                    float: left;
+                    outline: solid 1px black;
+                    margin: 10px;
+                    // cursor: pointer;
+                    overflow: hidden;
+                    position: relative;
+    
+            
+                    span.caractere{
+                        display: block;
+                        font-size: 60px;
+                        // outline: solid;
+                        text-transform: uppercase;
+                        text-align: center;
+                        // padding-top: 20px;
+                        // padding-bottom: 20px;
+                        line-height: 150px;
+                        // white-space: nowrap;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+    
+                    a.som-letra{
+                        background-color: #FF5722;
+                        position: absolute;
+                        width: 30px;
+                        height: 30px;
+                        // display: none;
+                        bottom: 4px;
+                        left: 4px;
+                        border-radius: 20px;
+                        z-index: 1;
+                    }
+    
+                    a.som-imagem{
+                        background-color: rgb(125, 102, 255);
+                        color: white;
+                        position: absolute;
+                        width: 30px;
+                        height: 30px;
+                        // display: none;
+                        bottom: 4px;
+                        left: 40px;
+                        border-radius: 20px;
+                        z-index: 1;
+                    }
+    
+                    a.imagem{
+                        background-color: #2196F3;
+                        position: absolute;
+                        width: 30px;
+                        height: 30px;
+                        // display: none;
+                        bottom: 4px;
+                        left: 76px;
+                        border-radius: 20px;
+                        z-index: 1;
+                    }
+                    
+                    &.selecionada{
+                        background-color: red;
+                        color: white;
+                    }
+                    
+                    img{
+                        display: none;
+                        width: 100%;
+                    }
+                }
+            
+            }
+
             .acoes {
                 text-align: center;
                 display: block;
@@ -214,6 +214,10 @@ body{
             
         }
     }
+}
+
+.cursor{
+    cursor: pointer;
 }
 
 /* FONTS */
