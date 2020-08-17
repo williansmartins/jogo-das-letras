@@ -140,22 +140,40 @@ angular.module('principal')
     $scope.mostrarLetra = true;
 
     $scope.mudarTodasParaMaiuscula = function(){
-        $(".letra span").css('text-transform', 'uppercase');
+        angular.forEach($scope.letras.itens, function(value, key) {
+            console.info(key + ': ' + value);
+            value.letra = value.letra.toUpperCase();
+            value.maiuscula = true;
+        });
+
         Script.falando("letra maiúscula");
     }
 
     $scope.mudarTodasParaMinuscula = function(){
-        $(".letra span").css('text-transform', 'lowercase');
+        angular.forEach($scope.letras.itens, function(value, key) {
+            console.info(key + ': ' + value);
+            value.letra = value.letra.toLowerCase();
+            value.maiuscula = false;
+        });
+
         Script.falando("letra minúscula");
     }
 
     $scope.mudarTodasParaCursiva = function(){
-        $(".letra span").css('font-family', 'LearningCurve');
+        angular.forEach($scope.letras.itens, function(value, key) {
+            console.info(key + ': ' + value);
+            value.cursiva = true;
+        });
+
         Script.falando("letra cursiva");
     }
 
     $scope.mudarTodasParaForma = function(){
-        $(".letra span").css('font-family', 'arial');
+        angular.forEach($scope.letras.itens, function(value, key) {
+            console.info(key + ': ' + value);
+            value.cursiva = false;
+        });
+
         Script.falando("letra de forma");
     }
 
@@ -185,6 +203,7 @@ angular.module('principal')
 
     $scope.virarCardLetra = function(letra){
       Script.falando(letra.letra);
+      letra.mostrarLetra = !letra.mostrarLetra;
     }
 
     $scope.virarCardImagem = function(letra){

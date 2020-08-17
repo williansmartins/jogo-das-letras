@@ -28,17 +28,20 @@
         </div>
         
         <div class="letras">
-            <div class="letra" ng-repeat="letra in letras.itens" ng-init="letra.mostrarLetra = true; letra.maiuscula=false; letra.cursiva=false">
-                <span class="cursor caractere" ng-class="{'cursiva' : letra.cursiva}" ng-if="letra.mostrarLetra" >{{letra.letra}}</span>
+            <div class="letra" ng-repeat="letra in letras.itens" ng-init="letra.mostrarLetra = true; letra.maiuscula=true; letra.cursiva=false">
+                <span class="cursor caractere" 
+                ng-class="{'cursiva' : letra.cursiva}" 
+                ng-if="letra.mostrarLetra" 
+                ng-click="virarCardLetra(letra)" >{{letra.letra}}</span>
                 <img class="cursor" 
                     ng-src="img/alfabeto/{{letra.imagemUrl}}" 
                     ng-if="!letra.mostrarLetra" 
-                    ng-click="virarCardLetra(letra)"
+                    ng-click="virarCardImagem(letra)"
                     alt="{{letra.imagem}}">
                 
-                <div class="botoes formatacao">
-                    <a href="javascript:void(0)" ng-click="mudarParaMaiuscula(letra)" ng-if="letra.maiuscula" class="tres maiuscula">&uarr;</a>
-                    <a href="javascript:void(0)" ng-click="mudarParaMinuscula(letra)" ng-if="!letra.maiuscula" class="quatro minuscula">&darr;</a>
+                <div class="botoes formatacao" ng-if="letra.mostrarLetra">
+                    <a href="javascript:void(0)" ng-click="mudarParaMaiuscula(letra)" ng-if="!letra.maiuscula" class="tres maiuscula">&uarr;</a>
+                    <a href="javascript:void(0)" ng-click="mudarParaMinuscula(letra)" ng-if="letra.maiuscula" class="quatro minuscula">&darr;</a>
                     <a href="javascript:void(0)" ng-click="mudarParaCursiva(letra)" ng-if="!letra.cursiva" class="cinco cursiva">A</a></a>
                     <a href="javascript:void(0)" ng-click="mudarParaCursiva(letra)" ng-if="letra.cursiva" class="seis forma">A</a>
                 </div>
