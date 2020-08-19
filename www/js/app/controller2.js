@@ -139,7 +139,7 @@ angular.module('principal')
 
     var numeros = [];
     $scope.letra = "";
-    
+    $scope.resultado = "";
     
     var sortear = function(){
 
@@ -159,6 +159,8 @@ angular.module('principal')
         $scope.opcao4 = $scope.letras.itens[numeros[3]];
     
         $scope.letra = $scope.letras.itens[numeros[Math.floor(Math.random() * 3)]].letra;
+
+        $scope.resultado = ""
     }
     
     $scope.falando = function(letra){
@@ -183,6 +185,7 @@ angular.module('principal')
             var promise1 = $timeout(500);
             promise1.then(function() {
                 $scope.falando("acertou!!!"); 
+                $scope.resultado = "ACERTOU!";
             });
 
             var promise2 = $timeout(2000);
@@ -204,6 +207,7 @@ angular.module('principal')
   
             promise.then(function() {
                 $scope.falando("errou!!!");
+                $scope.resultado = "ERROU!";
             });
 
             promise2.then(function() {
