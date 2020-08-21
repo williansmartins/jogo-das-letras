@@ -140,27 +140,34 @@ angular.module('principal')
     var numeros = [];
     $scope.letra = "";
     $scope.resultado = "";
+    $scope.pontos = 0;
+    $scope.maximo = 5;
+    $scope.terminou = false;
     
     var sortear = function(){
 
-        numeros = [];
-        
-        while (numeros.length < 4) {
-            var aleatorio = Math.floor(Math.random() * $scope.letras.itens.length);
+        if(!$scope.terminou){
+            numeros = [];
             
-            if (numeros.indexOf(aleatorio) == -1){
-                numeros.push(aleatorio);
+            while (numeros.length < 4) {
+                var aleatorio = Math.floor(Math.random() * $scope.letras.itens.length);
+                
+                if (numeros.indexOf(aleatorio) == -1){
+                    numeros.push(aleatorio);
+                }
             }
-        }
-
-        $scope.opcao1 = $scope.letras.itens[numeros[0]];
-        $scope.opcao2 = $scope.letras.itens[numeros[1]];
-        $scope.opcao3 = $scope.letras.itens[numeros[2]];
-        $scope.opcao4 = $scope.letras.itens[numeros[3]];
     
-        $scope.letra = $scope.letras.itens[numeros[Math.floor(Math.random() * 3)]].letra;
-
-        $scope.resultado = ""
+            $scope.opcao1 = $scope.letras.itens[numeros[0]];
+            $scope.opcao2 = $scope.letras.itens[numeros[1]];
+            $scope.opcao3 = $scope.letras.itens[numeros[2]];
+            $scope.opcao4 = $scope.letras.itens[numeros[3]];
+        
+            $scope.letra = $scope.letras.itens[numeros[Math.floor(Math.random() * 3)]].letra;
+    
+            $scope.falando($scope.letra);
+    
+            $scope.resultado = "";
+        }
     }
     
     $scope.falando = function(letra){
@@ -184,17 +191,23 @@ angular.module('principal')
 
             var promise1 = $timeout(500);
             promise1.then(function() {
-                $scope.falando("acertou!!!"); 
-                $scope.resultado = "ACERTOU!";
+                $scope.falando(opcao.imagem);
             });
-
+            
             var promise2 = $timeout(2000);
             promise2.then(function() {
-                $scope.falando(opcao.imagem);
+                $scope.falando("acertou!!!"); 
+                $scope.resultado = "ACERTOU!";
+                $scope.pontos++;
             });
 
             var promise3 = $timeout(4000);
             promise3.then(function() {
+                $scope.falarPontos();
+            });
+
+            var promise4 = $timeout(7000);
+            promise4.then(function() {
                 sortear();
             });
             
@@ -202,22 +215,55 @@ angular.module('principal')
             // $timeout($scope.falando("errou!!!"), 500);
             // $timeout($scope.falando(opcao.imagem), 2000);
 
-            var promise = $timeout(500);
+            var promise1 = $timeout(500);
             var promise2 = $timeout(2000);
+            var promise3 = $timeout(6000);
   
-            promise.then(function() {
+            promise1.then(function() {
                 $scope.falando("errou!!!");
                 $scope.resultado = "ERROU!";
+                $scope.pontos--;
             });
 
             promise2.then(function() {
+                $scope.falarPontos();
+            });
+
+            promise3.then(function() {
                 $scope.falando(opcao.imagem);
             });
         }
     }
 
+    $scope.falarPontos = function(){
+        if($scope.pontos == 1){
+            $scope.falando("Você ganhou 1 ponto.");
+        }else{
+            $scope.falando("Você tem agora " + $scope.pontos + " pontos");
+        }
+
+        var promise1 = $timeout(3000);
+  
+        promise1.then(function() {
+            if($scope.pontos >= 5){
+                $scope.falando("Parabéns, você ganhou o jogo!");
+                $scope.terminou = true;
+            }
+    
+            if($scope.pontos < 0){
+                $scope.falando("Qué Qué Qué Qué Qué , você perdeu o jogo!");
+                $scope.terminou = true;
+            }
+        });
+
+    }
+
     init = function() {
-        window.speechSynthesis.cancel();
+        var promise = $timeout(500);
+        promise.then(function() {
+            $scope.falando("Clique no som e descubra qual imagem começa com a letra");
+        });
+        
         sortear();
     };
 
