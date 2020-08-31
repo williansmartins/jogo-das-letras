@@ -36,6 +36,10 @@ body .wrapper .jogos .jogo .para {
 body .wrapper .jogos .jogo .seta {
   width: 60px;
 }
+body .wrapper .bloco-central,
+body .wrapper .text-center {
+  text-align: center;
+}
 body .wrapper.som-imagem h1 {
   text-align: center;
 }
@@ -46,24 +50,6 @@ body .wrapper.som-imagem .principal {
   border: solid 1px gray;
   border-radius: 10px;
   display: table;
-  padding: 5px;
-}
-body .wrapper.som-imagem .imagens {
-  display: table;
-  height: 150px;
-  margin: 0 auto;
-}
-body .wrapper.som-imagem .imagens .imagem {
-  width: 150px;
-  height: 150px;
-  border: solid 1px gray;
-  border-radius: 10px;
-  float: left;
-  margin: 5px;
-  overflow: hidden;
-}
-body .wrapper.som-imagem .imagens .imagem img {
-  width: 100%;
   padding: 5px;
 }
 body .wrapper.letra-imagem .letras .letra {
@@ -148,6 +134,37 @@ body .wrapper.letra-imagem .acoes a {
 body .wrapper.letra-imagem .letras {
   display: block;
   overflow: auto;
+}
+body .wrapper.imagem-som .opcao {
+  position: relative;
+}
+body .wrapper.imagem-som .opcao .escolher {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  background: cornflowerblue;
+  padding: 10px;
+  margin: 3px;
+}
+.imagens {
+  display: table;
+  height: 150px;
+  margin: 0 auto;
+}
+.imagens .imagem,
+.imagens .opcao {
+  width: 150px;
+  height: 150px;
+  border: solid 1px gray;
+  border-radius: 10px;
+  float: left;
+  margin: 5px;
+  overflow: hidden;
+}
+.imagens .imagem img,
+.imagens .opcao img {
+  width: 100%;
+  padding: 5px;
 }
 .cursor {
   cursor: pointer;
