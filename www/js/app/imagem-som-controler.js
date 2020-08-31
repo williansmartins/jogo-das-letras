@@ -238,7 +238,12 @@ angular.module('principal')
         if($scope.pontos == 1){
             $scope.falando("Você ganhou 1 ponto.");
         }else{
-            $scope.falando("Você tem agora " + $scope.pontos + " pontos");
+            if($scope.pontos < 0){
+
+            }else{
+                $scope.falando("Você tem agora " + $scope.pontos + " pontos");
+            }
+
         }
 
         var promise1 = $timeout(3000);
@@ -250,7 +255,7 @@ angular.module('principal')
             }
     
             if($scope.pontos < 0){
-                $scope.falando("Qué Qué Qué Qué Qué , você perdeu o jogo!");
+                $scope.falando("ué ué ué ué ué ué  , você perdeu o jogo!");
                 $scope.terminou = true;
             }
         });
@@ -302,15 +307,15 @@ angular.module('principal')
         });
 
         promise3.then(function() {
-            $scope.falando(opcao.imagem);
+            sortear();
         });
     }
 
     init = function() {
-        // var promise = $timeout(500);
-        // promise.then(function() {
-        //     $scope.falando("Clique no som e descubra qual imagem começa com a letra");
-        // });
+        var promise = $timeout(500);
+        promise.then(function() {
+            $scope.falando("Qual primeira letra da imagem abaixo?");
+        });
         
         sortear();
     };
